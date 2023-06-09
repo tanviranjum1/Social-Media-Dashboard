@@ -9,36 +9,50 @@ import { ReactComponent as Down } from "./images/icon-down.svg";
 function PanelTwo({ secondelements }) {
   return (
     <div>
-      <Typography color="text.secondary">Overview - Today</Typography>
+      <Typography
+        color="text.secondary"
+        sx={{ marginBottom: "20px", fontWeight: 700 }}
+      >
+        Overview - Today
+      </Typography>
       {secondelements.map((obj) => (
         <Box
           component="span"
           sx={{
-            minWidth: 255,
-            minHeight: 125,
+            minWidth: 216,
+            minHeight: 80,
             display: "inline-block",
-            mx: "2px",
+            marginRight: "30px",
+            marginBottom: "10px",
           }}
         >
           <Card variant="outlined">
             <React.Fragment>
               <CardContent>
-                <Typography
-                  sx={{ fontSize: 14 }}
-                  color="text.secondary"
-                  gutterBottom
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  {obj.name}
+                  <Typography
+                    sx={{ fontSize: 14, fontWeight: 600 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    {obj.type}
+                  </Typography>
                   {obj.icon}
-                </Typography>
-                <Typography variant="h5" component="div">
-                  {obj.count}
-                </Typography>
-                {obj.up == true ? <Up /> : <Down />}
-                <Typography sx={{ mb: 1.5 }} color="green">
-                  {obj.percent}%
-                </Typography>
-                {/* <Typography variant="body2">+ {obj.today} Today</Typography> */}
+                </div>
+
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Typography sx={{ fontSize: 32 }}>{obj.count}</Typography>
+                  <Typography
+                    sx={{ fontSize: 12, pt: 2 }}
+                    style={{ color: obj.up ? "green" : "red" }}
+                  >
+                    {obj.up ? <Up /> : <Down />} {obj.percent}%
+                  </Typography>
+                </div>
               </CardContent>
             </React.Fragment>
           </Card>

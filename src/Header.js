@@ -4,12 +4,17 @@ import { Typography } from "@mui/material";
 
 const Header = ({ toggleMode, isDarkMode }) => {
   return (
-    <div>
-      <h1>Social Media Dashboard</h1>
+    <div style={{ marginBottom: "20px" }}>
+      <h1 style={{ marginTop: "20px" }}>Social Media Dashboard</h1>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h3>Total Followers: 23,004</h3>
+        <Typography color="text.primary" sx={{ fontSize: "12px" }}>
+          Total Followers: 23,004
+        </Typography>
         <div>
-          <Typography color="text.secondary">
+          <Typography
+            color="text.secondary"
+            sx={{ fontSize: "12px", marginRight: "50px" }}
+          >
             Dark Mode
             <Switch
               checked={isDarkMode}

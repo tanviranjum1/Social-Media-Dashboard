@@ -13,12 +13,13 @@ function PanelOne({ elements }) {
         <Box
           component="span"
           sx={{
-            minWidth: 255,
+            minWidth: 216,
             minHeight: 216,
             display: "inline-block",
-            mx: "2px",
-            borderTop: "3px solid red",
+            marginRight: "30px",
+            borderTop: "3px solid blue",
           }}
+          align="center"
         >
           <Card variant="outlined">
             <React.Fragment>
@@ -31,14 +32,22 @@ function PanelOne({ elements }) {
                   {obj.icon}
                   {obj.name}
                 </Typography>
-                <Typography variant="h3" component="div">
+                <Typography variant="h3" component="div" sx={{ fontSize: 52 }}>
                   {obj.count}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <Typography
+                  sx={{ mb: 1.5, fontSize: 12 }}
+                  color="text.secondary"
+                  align="center"
+                >
                   {obj.type.toUpperCase()}
                 </Typography>
-                <Typography variant="body2">
-                  {obj.up == true ? <Up /> : <Down />} {obj.today} Today
+                <Typography
+                  variant="body2"
+                  sx={{ fontSize: 12 }}
+                  style={{ color: obj.up ? "green" : "red" }}
+                >
+                  {obj.up ? <Up /> : <Down />} {obj.today} Today
                 </Typography>
               </CardContent>
             </React.Fragment>

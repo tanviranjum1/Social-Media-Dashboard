@@ -75,13 +75,12 @@ function App() {
   };
 
   return (
-    <div
-      className={isDarkMode ? "dark-mode" : "light-mode"}
-      style={{ width: "90%", margin: "auto" }}
-    >
-      <Header isDarkMode={isDarkMode} toggleMode={toggleMode} />
-      <PanelOne elements={elements} key={uuidv4()} />
-      <PanelTwo secondelements={secondelements} key={uuidv4()} />
+    <div className={isDarkMode ? "dark-mode" : "light-mode"}>
+      <div style={{ width: "77%", margin: "auto" }}>
+        <Header isDarkMode={isDarkMode} toggleMode={toggleMode} />
+        <PanelOne elements={elements} key={uuidv4()} />
+        <PanelTwo secondelements={secondelements} key={uuidv4()} />
+      </div>
     </div>
   );
 }
