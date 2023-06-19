@@ -3,12 +3,14 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { ReactComponent as Up } from "./images/icon-up.svg";
-import { ReactComponent as Down } from "./images/icon-down.svg";
+import { ReactComponent as Up } from "../images/icon-up.svg";
+import { ReactComponent as Down } from "../images/icon-down.svg";
+import { v4 as uuidv4 } from "uuid";
+import "./PanelOne.css";
 
-function PanelOne({ elements }) {
+function PanelOne({ elements, key }) {
   return (
-    <div>
+    <div className="shared">
       {elements.map((obj) => (
         <Box
           component="span"
@@ -16,10 +18,10 @@ function PanelOne({ elements }) {
             minWidth: 216,
             minHeight: 216,
             display: "inline-block",
-            marginRight: "30px",
             borderTop: "3px solid blue",
           }}
           align="center"
+          key={uuidv4()}
         >
           <Card variant="outlined">
             <React.Fragment>
@@ -29,6 +31,7 @@ function PanelOne({ elements }) {
                   color="text.secondary"
                   gutterBottom
                 >
+                  {key}
                   {obj.icon}
                   {obj.name}
                 </Typography>

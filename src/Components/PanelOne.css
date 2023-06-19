@@ -1,0 +1,4 @@
+.shared {
+  display: flex;
+  justify-content: space-between;
+}
