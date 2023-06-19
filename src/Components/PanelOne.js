@@ -10,7 +10,7 @@ import "./PanelOne.css";
 
 function PanelOne({ elements, key }) {
   return (
-    <div className="shared">
+    <div className="panelone-container">
       {elements.map((obj) => (
         <Box
           component="span"
@@ -18,7 +18,7 @@ function PanelOne({ elements, key }) {
             minWidth: 216,
             minHeight: 216,
             display: "inline-block",
-            borderTop: "3px solid blue",
+            borderTop: `3px solid ${obj.color[0]}`,
           }}
           align="center"
           key={uuidv4()}

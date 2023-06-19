@@ -3,16 +3,15 @@
   font-family: Inter, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .dark-mode {
   transition: background-color 2s ease;
-  background-color: black;
+  background: grey;
 }
 
 .light-mode {
-  background-color: (230, 22%, 74%);
+  background-color: "#F2F2F2";
 }
 
 .container {
